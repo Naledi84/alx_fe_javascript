@@ -6,21 +6,24 @@ const quotes = [
   },
 ];
 
-function showRandomQuote() {
+function displayRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quote = quotes[randomIndex];
   document.getElementById(
     "quoteDisplay"
-  ).innerText = `"${quote.text}" - ${quote.category}`;
+  ).innerHTML = `"${quote.text}" - ${quote.category}`;
 }
 
-document.getElementById("newQuote").addEventListener("click", showRandomQuote);
+document
+  .getElementById("newQuote")
+  .addEventListener("click", displayRandomQuote);
 
 function addQuote() {
   const text = document.getElementById("newQuoteText").value;
   const category = document.getElementById("newQuoteCategory").value;
   if (text && category) {
     quotes.push({ text, category });
+    displayRandomQuote();
     alert("Quote added!");
     document.getElementById("newQuoteText").value = "";
     document.getElementById("newQuoteCategory").value = "";
