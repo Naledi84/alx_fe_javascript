@@ -3,24 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dynamic Quote Generator with Category Filter</title>
+  <title>Dynamic Quote Generator — Server Sync</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f4f4f9; color: #333; text-align: center; padding: 20px; }
     #quoteDisplay { margin: 20px auto; padding: 15px; border-radius: 8px; background: #fff; width: 60%; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     select, input, button { margin: 8px; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
     button { background-color: #4CAF50; color: white; cursor: pointer; }
     button:hover { background-color: #45a049; }
+    #notification { margin: 10px auto; width: 60%; padding: 10px; border-radius: 5px; display: none; }
     .controls { margin: 10px 0; }
   </style>
 </head>
 <body>
-  <h1>Dynamic Quote Generator with Category Filter</h1>
+  <h1>Dynamic Quote Generator with Server Sync</h1>
+
+  <div id="notification"></div>
 
   <div class="controls">
     <label for="categoryFilter">Filter by Category:</label>
     <select id="categoryFilter" onchange="filterQuotes()">
       <option value="all">All Categories</option>
-      <!-- Categories added dynamically -->
     </select>
   </div>
 
@@ -33,12 +35,9 @@
     <button id="newQuote">Show Random Quote</button>
     <button id="exportJson">Export Quotes (JSON)</button>
     <input type="file" id="importFile" accept=".json" />
+    <button id="manualSync">Sync Now</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
