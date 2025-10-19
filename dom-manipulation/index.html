@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dynamic Quote Generator</title>
+  <title>Dynamic Quote Generator with Category Filter</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -36,28 +36,30 @@
   </style>
 </head>
 <body>
-  <h1>Dynamic Quote Generator</h1>
+  <h1>Dynamic Quote Generator with Category Filter</h1>
 
   <div class="controls">
-    <label for="categorySelect">Choose a category:</label>
-    <select id="categorySelect"></select>
-    <button id="newQuote">Show New Quote</button>
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterQuotes()">
+      <option value="all">All Categories</option>
+      <!-- Categories added dynamically -->
+    </select>
   </div>
 
   <div id="quoteDisplay"></div>
 
-  <h3>Manage Quotes</h3>
-  <!-- The add-quote form will be created dynamically by createAddQuoteForm() -->
+  <h3>Add a New Quote</h3>
   <div id="formContainer"></div>
 
   <div class="controls">
+    <button id="newQuote">Show Random Quote</button>
     <button id="exportJson">Export Quotes (JSON)</button>
     <input type="file" id="importFile" accept=".json" />
-    <button id="clearStorage">Clear Saved Quotes</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
