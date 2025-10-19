@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dynamic Quote Generator</title>
   <style>
     body {
@@ -12,38 +12,33 @@
       text-align: center;
       padding: 20px;
     }
-
     #quoteDisplay {
       margin: 20px auto;
       padding: 15px;
       border-radius: 8px;
       background: #fff;
       width: 60%;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
     select, input, button {
       margin: 8px;
       padding: 8px;
       border-radius: 5px;
       border: 1px solid #ccc;
     }
-
     button {
       background-color: #4CAF50;
       color: white;
       cursor: pointer;
     }
-
-    button:hover {
-      background-color: #45a049;
-    }
+    button:hover { background-color: #45a049; }
+    .controls { margin: 10px 0; }
   </style>
 </head>
 <body>
   <h1>Dynamic Quote Generator</h1>
 
-  <div>
+  <div class="controls">
     <label for="categorySelect">Choose a category:</label>
     <select id="categorySelect"></select>
     <button id="newQuote">Show New Quote</button>
@@ -51,14 +46,18 @@
 
   <div id="quoteDisplay"></div>
 
-  <h3>Add a New Quote</h3>
-  <div>
-    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-    <button id="addQuote">Add Quote</button>
+  <h3>Manage Quotes</h3>
+  <!-- The add-quote form will be created dynamically by createAddQuoteForm() -->
+  <div id="formContainer"></div>
+
+  <div class="controls">
+    <button id="exportJson">Export Quotes (JSON)</button>
+    <input type="file" id="importFile" accept=".json" />
+    <button id="clearStorage">Clear Saved Quotes</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
